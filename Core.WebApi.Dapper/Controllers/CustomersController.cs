@@ -20,8 +20,6 @@ namespace Core.WebApi.Dapper.Controllers
         }
 
         [HttpGet]
-        //[ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse))]
-        //[ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> GetAllCustomersAsync(CancellationToken cancellationToken)
         {
             _logger.LogDebug("{method} started", "GetAllCustomersAsync");
