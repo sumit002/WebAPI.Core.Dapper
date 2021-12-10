@@ -47,7 +47,7 @@ namespace Core.WebApi.Dapper
                 var connectionString = Configuration.GetConnectionString("DefaultConnection");
                 return new SqlConnection(connectionString ??
                                          throw new InvalidOperationException(
-                                             "Configuration setting 'fusion-db' is invalid."));
+                                             "Configuration setting 'MSSQLLocalDB' is invalid."));
             });
 
             //Register Services 
@@ -56,6 +56,7 @@ namespace Core.WebApi.Dapper
             services.AddScoped<ICustomersRepository, CustomersRepository>();
         }
 
+        #region Configure
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -76,6 +77,7 @@ namespace Core.WebApi.Dapper
             {
                 endpoints.MapControllers();
             });
-        }
+        } 
+        #endregion
     }
 }
