@@ -7,7 +7,11 @@ namespace Core.WebApi.Dapper.Business.Api.v1.CustomersFacade
 {
     public interface ICustomersFacade
     {
-        //Task<bool> GetAllCustomersAsync(CancellationToken cancellationToken);
+        /// <summary>
+        /// Get All CustomersAsync
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         Task<IEnumerable<Customers>> GetAllCustomersAsync(CancellationToken cancellationToken);
     }
 }
